@@ -1,27 +1,53 @@
-# DevFinder
+# Meu Segundo Aplicativo em Angular: Buscador de usuarios do Github
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
+Este é o meu segundo aplicativo criado usando o framework Angular. Ele permite buscar informaçoes sobre usuarios do Github.
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Buscar usuarios do Github.
 
-## Code scaffolding
+## Pré-requisitos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Certifique-se de ter o Angular CLI instalado no seu sistema. Caso não tenha, você pode instalá-lo com o seguinte comando:
 
-## Build
+```
+  npm install -g @angular/cli
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Como Iniciar
 
-## Running unit tests
+1. Clone este repositório:
+```
+  git clone https://github.com/wiliammelo01/dev-finder.git
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Navegue até o diretório do projeto:
+```
+  cd dev-finder
+```
+3. Instale as dependências:
+```
+  npm install
+```
 
-## Running end-to-end tests
+4. Inicie o servidor de desenvolvimento:
+```
+  ng serve
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+5. Abra seu navegador e acesse [http://localhost:4200](http://localhost:4200) para visualizar o aplicativo.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Como Usar
+
+- Digite o nome de um usuario do Github na caixa de texto e pressione "ENTER".
+
+## Contribuindo
+
+Sinta-se à vontade para contribuir com melhorias para este aplicativo. Você pode abrir problemas (issues) ou enviar solicitações de pull (pull requests).
+
+## Licença
+
+Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) para obter mais detalhes.
+
+
