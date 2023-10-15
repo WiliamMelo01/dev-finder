@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Inject, Output } from '@angular/core';
+import { Component, EventEmitter, Inject, OnDestroy, Output } from '@angular/core';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { heroMagnifyingGlass } from '@ng-icons/heroicons/outline';
+import { Subscription } from 'rxjs';
 import { GithubService } from '../github-seacher.service';
 import { GitHubUser } from '../interfaces/github_user';
 
@@ -12,25 +13,34 @@ import { GitHubUser } from '../interfaces/github_user';
   imports: [NgIconComponent],
   viewProviders: [provideIcons({ heroMagnifyingGlass })]
 })
-export class SearchInputComponent {
+export class SearchInputComponent implements OnDestroy{
 
   constructor(@Inject(GithubService) readonly _githubService : GithubService){}
+ 
 
   @Output() childEvent = new EventEmitter<string  | GitHubUser >();
 
-  userData = {};
+  private subscription : Subscription | null = null;
 
   handleKeyPress(event : KeyboardEvent){
     const target = event.target as HTMLInputElement; 
     if(event.key === 'Enter'){
       this.childEvent.emit("Fetching data");
-      const result =this._githubService.getUserData(target.value).subscribe(data => {
-        this.userData = data;
-        this.childEvent.emit(data);
-      }, (_) => {
-        this.childEvent.emit("Fetching error");
+      this.subscription = this._githubService.getUserData(target.value).subscribe({
+        next: data => {
+          this.childEvent.emit(data);
+        },
+        error: _ => {
+          this.childEvent.emit("Fetching error");
+        }
       });
     }
+  }
+
+  ngOnDestroy(): void {
+   if(this.subscription){
+    this.subscription.unsubscribe();
+    }  
   }
 
 }
