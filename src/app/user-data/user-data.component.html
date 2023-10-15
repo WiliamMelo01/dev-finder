@@ -1,0 +1,45 @@
+<div class="data_container">
+    <img src={{userData.avatar_url}} alt="">
+
+    <div class="content">
+        <div class="row">
+            <a target="_blank" href={{userData.html_url}}>
+                <span class="username">{{userData.name}}</span>
+            </a>
+            <span class="join_data">Joined {{userData.created_at}}</span>
+        </div>
+        <a target="_blank" href={{userData.html_url}}>
+            <span class="user">@{{userData.login}}</span>
+        </a>
+
+        <p>{{userData.bio}}</p>
+
+        <div class="card_profile">
+            <div class="card_info">
+                <span class="title">Repos</span>
+                <span class="data">{{userData.public_repos}}</span>
+            </div>
+            <div class="card_info">
+                <span class="title">Followers</span>
+                <span class="data">{{userData.followers}}</span>
+            </div>
+            <div class="card_info">
+                <span class="title">Following</span>
+                <span class="data">{{userData.following}}</span>
+            </div>
+        </div>
+
+        <div class="card_contact">
+            <div class="card_info">
+                <ng-icon name="heroMapPin" color="#697c9a"></ng-icon>
+                <span>{{userData.location ?? "Not Available"}}</span>
+            </div>
+            <div class="card_info">
+                <ng-icon name="heroBuildingOffice" color="#697c9a"></ng-icon>
+                <span>{{userData.company ?? "Not Available"}}</span>
+            </div>
+        </div>
+
+    </div>
+
+</div>

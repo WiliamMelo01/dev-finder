@@ -1,0 +1,107 @@
+@import "../../variables"
+
+@mixin link
+    text-decoration: none
+    color: inherit
+
+.data_container
+
+    height: auto
+    width: 100%
+
+    border-radius: .8em
+
+    background: $primary-color
+
+    padding-block: 1.5em
+
+    display: flex
+    gap: 1em
+
+    color: $primary-text
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif
+
+    img
+        border-radius: 50%
+
+        margin-left: 1.5em
+
+        height: 130px
+        width: 130px
+
+    .content
+        flex: 1
+        margin-right: 1.5em
+
+        .row
+            display: flex
+            align-items: center
+            justify-content: space-between
+
+            margin-bottom: .5em
+
+            a
+                @include link
+
+                .username
+                    font-size: 1.5em
+                    font-weight: 600
+                    letter-spacing: 1px
+                    transition: opacity .2s ease
+                    cursor: pointer
+
+                    &:hover
+                        opacity: .4
+
+            .join_data
+                align-self: flex-start
+        a
+            @include link
+            color: $special-color
+
+        p
+            margin-top: 1em
+            margin-bottom: 2em
+
+            text-align: justify
+
+        .card_profile
+            width: 100%
+            height: auto
+
+            padding-block: 1.6em
+
+            border-radius: .8em
+
+            background: $bg-color
+
+            display: flex
+            align-items: center
+            justify-content: space-evenly
+
+            margin-bottom: 1em
+
+            .card_info
+                display: flex
+                flex-direction: column
+                align-items: center
+                gap: .2em
+
+                .title
+                    font-weight: 600
+
+        .card_contact
+            width: 100%
+            height: auto
+
+            color: $secondary-text
+
+            display: grid
+            grid-template-columns: .45fr 1fr
+            gap: .5em
+
+            .card_info
+                display: flex
+                align-items: center
+                justify-content: center
+                gap: .5em
